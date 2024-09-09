@@ -306,7 +306,7 @@ def wait_for_confirmation(client, txid, timeout=10):
     start_time = time.time()
     while True:
         try:
-            status = client.transaction_info(txid)
+            status = client.pending_transaction_info(txid)  # Use the correct method here
             if status.get("confirmed-round") and status["confirmed-round"] > 0:
                 print(f"Transaction confirmed in round {status['confirmed-round']}.")
                 return
@@ -318,7 +318,7 @@ def wait_for_confirmation(client, txid, timeout=10):
             raise Exception("Transaction confirmation timeout.")
 
         time.sleep(1)
-
+2
 
 if __name__ == "__main__":
     main()
