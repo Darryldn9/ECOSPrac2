@@ -177,7 +177,6 @@ def opt_in_nft(algod_client, receiver_private_key, receiver_address, asset_id):
         print(f"Error during opt-in request: {e}")
         return False
 
-
 def transfer_nft(algod_client, indexer_client, sender_private_key, sender_address):
     try:
         # List owned assets
